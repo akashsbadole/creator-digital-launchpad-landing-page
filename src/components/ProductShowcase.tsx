@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, ArrowRight, Download, Clock, Users, Star } from 'lucide-react';
+import { Check, ArrowRight, Download, Clock, Users, Star, Shield } from 'lucide-react';
 
 const ProductShowcase = () => {
   const [processing, setProcessing] = useState<string | null>(null);
