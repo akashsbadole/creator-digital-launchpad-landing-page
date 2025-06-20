@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check, Star, Download, Users } from 'lucide-react';
+import { Check, Star, Download, Users, Shield } from 'lucide-react';
 
 const ProductShowcase = () => {
   const products = [
