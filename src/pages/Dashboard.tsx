@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Navigate } from 'react-router-dom';
@@ -45,10 +44,10 @@ const Dashboard = () => {
       .eq('seller_id', user.id)
       .eq('status', 'completed');
 
-    const totalRevenue = orders?.reduce((sum, order) => sum + parseFloat(order.total_amount), 0) || 0;
+    const totalRevenue = orders?.reduce((sum, order) => sum + Number(order.total_amount), 0) || 0;
     const totalProducts = products?.length || 0;
     const totalOrders = orders?.length || 0;
-    const totalViews = products?.reduce((sum, product) => sum + (product.view_count || 0), 0) || 0;
+    const totalViews = products?.reduce((sum, product) => sum + (Number(product.view_count) || 0), 0) || 0;
 
     setStats({
       totalRevenue,
@@ -209,7 +208,7 @@ const Dashboard = () => {
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-medium">${parseFloat(order.total_amount).toFixed(2)}</p>
+                      <p className="font-medium">${Number(order.total_amount).toFixed(2)}</p>
                       <Badge variant={order.status === 'completed' ? 'default' : 'secondary'}>
                         {order.status}
                       </Badge>
